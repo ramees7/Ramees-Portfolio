@@ -1,0 +1,56 @@
+.border-box {
+    position: relative;
+    padding: 20px;
+    border: 2px solid #161616;
+    transition: all 0.3s ease;
+  }
+  
+  .border-box:before,
+  .border-box:after,
+  .border-box > div:before,
+  .border-box > div:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background-color: #00ff00; /* Green border color */
+    transition: width 0.3s ease;
+  }
+  
+  .border-box:after,
+  .border-box > div:after {
+    width: 2px;
+    height: 0;
+    transition: height 0.3s ease;
+  }
+  
+  .border-box.border-left:before,
+  .border-box.border-left > div:before {
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+  }
+  
+  .border-box.border-top:before {
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 100%;
+  }
+  
+  .border-box.border-right:before,
+  .border-box.border-right > div:before {
+    right: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+  }
+  
+  .border-box.border-bottom:before {
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+  }
+  
