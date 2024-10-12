@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Resume() {
   const experience = [
@@ -41,9 +43,13 @@ export default function Resume() {
       collageName: "Moonniyur Higher Secondary School",
     },
   ];
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <section className="py-10 px-10 md:px-20 lg:px-40 bg-black text-white">
-      <div className="flex items-center flex-col pb-10 ">
+      <div className="flex items-center flex-col pb-16 " data-aos="fade-up">
         <h4 className="text-md md:text-lg w-fit mb-2 text-[#9f9f9f]">
           A Glimpse into My Professional Journey
         </h4>
@@ -55,15 +61,15 @@ export default function Resume() {
         {/* Education Section */}
         <div>
           {/* <h3 className="text-2xl font-semibold mb-6">My Education</h3> */}
-          <div className="pb-10">
+          <div className="pb-10"  data-aos="fade-right">
             <h3 className="text-base text-[#9f9f9f]">
               My Academic Achievements and Learning Journey
             </h3>
             <h1 className="text-2xl md:text-3xl font-bold">Education</h1>
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10" >
             {education?.map((item, ind) => (
-              <div className="bg-[#161616] p-10" key={ind}>
+              <div className="bg-[#161616] p-10" key={ind}  data-aos="fade-right">
                 <span className="text-sm bg-green-800 text-white px-2 py-1 ">
                   {item.year}
                 </span>
@@ -78,7 +84,7 @@ export default function Resume() {
         </div>
         {/* Experience Section */}
         <div>
-          <div className="pb-10">
+          <div className="pb-10"  data-aos="fade-left">
             <h3 className="text-base text-[#9f9f9f]">
               A Chronicle of My Professional Roles and Growth
             </h3>
@@ -87,7 +93,7 @@ export default function Resume() {
           {/* <h3 className="text-2xl font-semibold mb-6">My Experience</h3> */}
           <div className="flex flex-col gap-10">
             {experience?.map((item, ind) => (
-              <div className="bg-[#161616] p-10" key={ind}>
+              <div className="bg-[#161616] p-10" key={ind}  data-aos="fade-left">
                 <span className="text-sm bg-green-800 text-white px-2 py-1 ">
                   {item.year}
                 </span>

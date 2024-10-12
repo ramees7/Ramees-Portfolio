@@ -1,127 +1,43 @@
-// import React, { useState } from "react";
-// import careerSteersman from "../assets/careersteersman.png";
-// import hospital from "../assets/hospital.png";
-// import tshirt from "../assets/tshirt.png";
-// import blacklist from "../assets/blacklist.png";
-
-// const portfolioItems = [
-//   {
-//     title: "Career Steersman Website",
-//     description: "A tech institute website",
-//     imageUrl: careerSteersman, // Use actual image URL
-//     category: "Web",
-//     link:"https://careersteersman.com/"
-//   },
-//   {
-//     title: "Maldives Black List",
-//     description: "A fraud detect website",
-//     imageUrl: blacklist, // Use actual image URL
-//     category: "Web",
-//     link:"https://maldivesblacklist.netlify.app/"
-//   },
-//   {
-//     title: "T-shirt E-com",
-//     description: "A T-shirt e-commerce web application",
-//     imageUrl: tshirt, // Use actual image URL
-//     category: "E-com",
-//     link:"https://t-shirt-lyart.vercel.app/"
-//   },
-//   {
-//     title: "Hospital",
-//     description: "Hospital appointment booking webiste",
-//     imageUrl: hospital, // Use actual image URL
-//     category: "Web",
-//     link:"https://hopewellhospital.netlify.app/"
-//   },
-// ];
-
-// export default function Portfolio() {
-//   const [activeTab, setActiveTab] = useState("Design");
-
-//   // Filter portfolio items based on the selected tab
-//   const filteredItems = portfolioItems.filter(
-//     (item) => item.category === activeTab
-//   );
-
-//   return (
-//     <div className=" py-10 px-10 md:px-20 lg:px-40 bg-black text-white">
-//       <div className="flex items-center flex-col pb-10 ">
-//         <h4 className="text-md md:text-lg w-fit mb-2 text-[#9f9f9f]">
-//           Showcasing some of my best work
-//         </h4>
-//         <div className="border-b-4 border-green-700  ">
-//           <h1 className="text-4xl md:text-5xl font-bold pb-8  ">Portfolio</h1>
-//         </div>
-//       </div>
-
-//       <div className="flex justify-center mb-10">
-//         {["All", "Web", "E-com", "Software"].map((tab) => (
-//           <button
-//             key={tab}
-//             className={`px-4 py-2 mx-2 text-lg font-semibold ${
-//               activeTab === tab ? "border-b-2 border-green-500" : ""
-//             }`}
-//             onClick={() => setActiveTab(tab)}
-//           >
-//             {tab}
-//           </button>
-//         ))}
-//       </div>
-
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-[350px] ">
-//         {filteredItems.map((item, index) => (
-//           <div key={index} className="bg-[#161616] h-full">
-//             <img
-//               src={item.imageUrl}
-//               alt={item.title}
-//               className="w-full h-[350px]"
-//             />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import careerSteersman from "../assets/careersteersman.png";
 import hospital from "../assets/hospital.png";
 import tshirt from "../assets/tshirt.png";
 import blacklist from "../assets/blacklist.png";
-
-const portfolioItems = [
-  {
-    title: "Career Steersman Website",
-    description: "A tech institute website",
-    imageUrl: careerSteersman,
-    category: "Web",
-    link: "https://careersteersman.com/",
-  },
-  {
-    title: "Maldives Black List",
-    description: "A fraud detect website",
-    imageUrl: blacklist,
-    category: "Web",
-    link: "https://maldivesblacklist.netlify.app/",
-  },
-  {
-    title: "T-shirt E-com",
-    description: "A T-shirt e-commerce web application",
-    imageUrl: tshirt,
-    category: "E-com",
-    link: "https://t-shirt-lyart.vercel.app/",
-  },
-  {
-    title: "Hospital",
-    description: "Hospital appointment booking website",
-    imageUrl: hospital,
-    category: "Web",
-    link: "https://hopewellhospital.netlify.app/",
-  },
-];
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("All");
+  const portfolioItems = [
+    {
+      title: "Career Steersman Website",
+      description: "A tech institute website",
+      imageUrl: careerSteersman,
+      category: "Web",
+      link: "https://careersteersman.com/",
+    },
+    {
+      title: "Maldives Black List",
+      description: "A fraud detect website",
+      imageUrl: blacklist,
+      category: "Web",
+      link: "https://maldivesblacklist.netlify.app/",
+    },
+    {
+      title: "T-shirt E-com",
+      description: "A T-shirt e-commerce web application",
+      imageUrl: tshirt,
+      category: "E-com",
+      link: "https://t-shirt-lyart.vercel.app/",
+    },
+    {
+      title: "Hospital",
+      description: "Hospital appointment booking website",
+      imageUrl: hospital,
+      category: "Web",
+      link: "https://hopewellhospital.netlify.app/",
+    },
+  ];
 
   // Filter portfolio items based on the selected tab
   const filteredItems =
@@ -129,9 +45,12 @@ export default function Portfolio() {
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === activeTab);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div className="py-10 px-10 md:px-20 lg:px-40 bg-black text-white">
-      <div className="flex items-center flex-col pb-10 ">
+      <div className="flex items-center flex-col pb-16 " data-aos="fade-up">
         <h4 className="text-md md:text-lg w-fit mb-2 text-[#9f9f9f]">
           Showcasing some of my best work
         </h4>
@@ -141,19 +60,21 @@ export default function Portfolio() {
       </div>
 
       <div className="flex justify-center mb-10">
-        {["All", "Web", "E-com", "Software"].map((tab) => (
+        {["All", "Web", "E-com", "Software"].map((tab,ind) => (
           <button
             key={tab}
             className={`px-4 py-2 mx-2 text-lg font-semibold ${
               activeTab === tab ? "border-b-4 border-green-800" : ""
             }`}
             onClick={() => setActiveTab(tab)}
+            data-aos="fade-right"
+            data-aos-delay={ind * 100} 
           >
             {tab}
           </button>
         ))}
       </div>
-      {filteredItems.length>0 ? (
+      {filteredItems.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-[300px]">
           {filteredItems.map((item, index) => (
             <a
@@ -163,6 +84,8 @@ export default function Portfolio() {
               rel="noopener noreferrer"
               className="group"
               title={`Click for view ${item.title}`}
+              data-aos="fade-right"
+              data-aos-delay={index * 100} 
             >
               <div className="relative bg-[#161616] h-full overflow-hidden">
                 {/* Image */}

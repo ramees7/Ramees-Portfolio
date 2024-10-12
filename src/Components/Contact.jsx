@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Contact({ socialMedia }) {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div className="min-h-screen flex flex-col justify-center items-center py-10 px-10 md:px-20 lg:px-40 bg-black text-white">
-      <div className="flex items-center flex-col pb-10 ">
+      <div className="flex items-center flex-col pb-16 "  data-aos="fade-up">
         <h4 className="text-md md:text-lg text-[#9f9f9f] mb-2">
           Feel free to contact me anytimes
         </h4>
@@ -14,7 +19,7 @@ export default function Contact({ socialMedia }) {
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Form Section */}
-        <div className="p-8 rounded-lg shadow-md">
+        <div className="p-8 rounded-lg shadow-md" data-aos="fade-right">
           <h3 className="text-2xl font-semibold mb-6">Message Me</h3>
           <form className="space-y-6">
             <div className="flex space-x-4">
@@ -49,7 +54,7 @@ export default function Contact({ socialMedia }) {
         </div>
 
         {/* Contact Info Section */}
-        <div className=" p-8 rounded-lg shadow-md">
+        <div className=" p-8 rounded-lg shadow-md" data-aos="fade-left">
           <h3 className="text-2xl font-semibold mb-6">Contact Info</h3>
           <p className="mb-6 text-[#9f9f9f]">
             Always available for freelance work if the right project comes
@@ -81,7 +86,13 @@ export default function Contact({ socialMedia }) {
           </div>
           <div className="flex gap-x-5 text-2xl">
             {socialMedia?.map((item, ind) => (
-              <a href={item.link} key={ind} title={item.name} target="_blank" className="mb-0">
+              <a
+                href={item.link}
+                key={ind}
+                title={item.name}
+                target="_blank"
+                className="mb-0"
+              >
                 {item.icon}
               </a>
             ))}

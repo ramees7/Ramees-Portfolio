@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { MdFormatQuote } from "react-icons/md";
 import { FaHtml5 } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Service() {
   const service = [
@@ -73,9 +75,13 @@ export default function Service() {
   const firstTestimonialIndex = currentIndex;
   const secondTestimonialIndex = (currentIndex + 1) % testimonials.length;
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <div className="bg-black text-white pb-10 ">
-      <div>
+    <div className="bg-black text-white pb-10">
+      <div data-aos="fade-up">
         <h3 className="text-base text-[#9f9f9f]">
           Services I offer to my clients
         </h3>
@@ -86,6 +92,8 @@ export default function Service() {
           <div
             className="md:col-span-3 lg:col-span-2 col-span-6 bg-[#161616] text-white p-7 space-y-3 hover:border-b-2 hover:border-b-green-700 border-2 border-[#161616]"
             key={ind}
+            data-aos="fade-right" // Adding AOS animation
+            data-aos-delay={ind * 100}
           >
             <div className="text-6xl text-green-700">{item.icon}</div>
             <h1 className="text-3xl">{item.title}</h1>
@@ -95,7 +103,7 @@ export default function Service() {
       </div>
 
       <div>
-        <div className="pt-10">
+        <div className="pt-10" data-aos="fade-up">
           <h3 className="text-base text-[#9f9f9f]">
             What my clients think about me
           </h3>
@@ -107,7 +115,10 @@ export default function Service() {
           <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-2 gap-10 items-center justify-center w-full">
               {/* Display one or two testimonials depending on screen size */}
-              <div className="bg-[#161616] p-10 text-white space-y-4 col-span-2 md:col-span-1 rounded-lg transition-opacity duration-1000 ease-in-out">
+              <div
+                className="bg-[#161616] p-10 text-white space-y-4 col-span-2 md:col-span-1 rounded-lg transition-opacity duration-1000 ease-in-out"
+                data-aos="fade-right"
+              >
                 <div className="flex items-center space-x-4">
                   <img
                     src={testimonials[firstTestimonialIndex].image}
@@ -129,13 +140,16 @@ export default function Service() {
                 </p>
 
                 {/* Quote icon */}
-                <div className="text-green-500 text-4xl">
+                <div className="text-green-800 text-4xl">
                   <MdFormatQuote />
                 </div>
               </div>
 
               {/* Conditionally render the second testimonial on screens larger than md */}
-              <div className="hidden md:block bg-[#161616] p-10 text-white space-y-4 col-span-2 md:col-span-1 rounded-lg transition-opacity duration-1000 ease-in-out">
+              <div
+                className="hidden md:block bg-[#161616] p-10 text-white space-y-4 col-span-2 md:col-span-1 rounded-lg transition-opacity duration-1000 ease-in-out"
+                data-aos="fade-left"
+              >
                 <div className="flex items-center space-x-4">
                   <img
                     src={testimonials[secondTestimonialIndex].image}
@@ -157,7 +171,7 @@ export default function Service() {
                 </p>
 
                 {/* Quote icon */}
-                <div className="text-green-500 text-4xl">
+                <div className="text-green-800 text-4xl">
                   <MdFormatQuote />
                 </div>
               </div>
@@ -166,15 +180,15 @@ export default function Service() {
         </div>
 
         {/* Dot indicators */}
-        <div className="flex justify-center space-x-2 mt-6">
+        <div
+          className="flex justify-center space-x-2 mt-6"
+          data-aos="fade-down"
+        >
           {testimonials.map((_, index) => (
             <div
               key={index}
               className={`h-3 w-3 rounded-full transition-all duration-500 ${
-                index === currentIndex
-                  ? //  || index === (currentIndex + 1) % testimonials.length?
-                    "bg-green-500"
-                  : "bg-gray-400"
+                index === currentIndex ? "bg-green-800" : "bg-[#9f9f9f]"
               }`}
             />
           ))}

@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import rameesPic from "../assets/ramees-3.jpg";
-import cvPdf from "../assets/Ramees Cv.pdf";
+import cvPdf from "../assets/RameesCv.pdf";
 
 export default function AboutLand({ socialMedia }) {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <section className="min-h-screen h-full bg-black  text-white pb-10">
+    <section className="min-h-screen h-full bg-black text-white pb-10">
       <div>
-        <div className="flex items-center flex-col pb-10 ">
-          <h4 className="text-md md:text-lg  mb-2 text-[#9f9f9f]">
+        <div className="flex items-center flex-col pb-16" data-aos="fade-up">
+          <h4 className="text-md md:text-lg mb-2 text-[#9f9f9f]">
             Get to know me
           </h4>
           <h1 className="text-4xl md:text-5xl font-bold pb-8 border-b-4 border-green-700">
@@ -15,17 +21,20 @@ export default function AboutLand({ socialMedia }) {
           </h1>
         </div>
         <div className="grid grid-cols-5 gap-8 h-full">
-          <div className="md:col-span-2 col-span-5 flex justify-center md:justify-normal">
+          <div
+            className="md:col-span-2 col-span-5 flex justify-center md:justify-normal"
+            data-aos="fade-right"
+          >
             <img
               src={rameesPic}
               alt="profile img"
-              className="md:h-[430px] md:w-[80%]  w-[200px] h-[200px] md:rounded-3xl rounded-full opacity-50"
+              className="md:h-[430px] md:w-[80%] w-[200px] h-[200px] md:rounded-3xl rounded-full opacity-50"
             />
           </div>
-          <div className="md:col-span-3 col-span-5 h-full">
+          <div className="md:col-span-3 col-span-5 h-full" data-aos="fade-left">
             <div className="pb-8 border-b border-[#9f9f9f]">
               <h3 className="text-green-700 font-semibold text-2xl mb-2">
-                Who am i?
+                Who am I?
               </h3>
               <h1 className="lg:text-3xl text-2xl font-bold mb-4">
                 I'm Muhammed Ramees, a Web Developer & Software Developer
@@ -60,7 +69,7 @@ export default function AboutLand({ socialMedia }) {
               </div>
               <div className="md:col-span-1 col-span-2">
                 <h1 className="text-base text-white">
-                  From: <span className="text-[#9f9f9f]">Kerala,India</span>
+                  From: <span className="text-[#9f9f9f]">Kerala, India</span>
                 </h1>
               </div>
             </div>
@@ -70,7 +79,7 @@ export default function AboutLand({ socialMedia }) {
                   href={cvPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Ramees_CV.pdf"
+                  download="RameesCV.pdf"
                 >
                   Download CV
                 </a>

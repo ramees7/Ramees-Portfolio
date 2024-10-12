@@ -34,7 +34,7 @@ export default function Skills() {
 
   return (
     <section className="py-10 px-10 md:px-20 lg:px-40 bg-black text-white ">
-      <div className="flex items-center flex-col pb-10 ">
+      <div className="flex items-center flex-col pb-16 "  data-aos="fade-up">
         <h4 className="text-md md:text-lg w-fit mb-2 text-[#9f9f9f]">
           Tools and Technologies I Use
         </h4>
@@ -42,7 +42,7 @@ export default function Skills() {
           <h1 className="text-4xl md:text-5xl font-bold pb-8">Skills</h1>
         </div>
       </div>
-      <div className="pb-10">
+      <div className="pb-10"  data-aos="fade-right">
         <h3 className="text-base text-[#9f9f9f]">
           Areas of Expertise and Skills
         </h3>
@@ -72,7 +72,7 @@ export default function Skills() {
           </div>
         ))}
       </div>
-      <div className="pb-10">
+      <div className="pb-10"  data-aos="fade-right">
         <h3 className="text-base text-[#9f9f9f]">
           Frameworks, Libraries, and Technologies I Use
         </h3>
