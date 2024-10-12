@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import rameesPic from "../assets/ramees-3.jpg";
-import cvPdf from "../assets/RameesCv.pdf";
+import cvPdf from "/RameesCV.pdf";
 
 export default function AboutLand({ socialMedia }) {
   useEffect(() => {
