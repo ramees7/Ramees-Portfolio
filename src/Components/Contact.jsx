@@ -55,7 +55,7 @@ export default function Contact({ socialMedia }) {
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Form Section */}
-        <div className="p-8 rounded-lg shadow-md" data-aos="fade-right">
+        <div className="" data-aos="fade-right">
           <h3 className="text-2xl font-semibold mb-6">Message Me</h3>
           <form className="space-y-6" onSubmit={formik.handleSubmit}>
             <div className="flex space-x-4">
@@ -137,7 +137,7 @@ export default function Contact({ socialMedia }) {
         </div>
 
         {/* Contact Info Section */}
-        <div className="p-8 rounded-lg shadow-md" data-aos="fade-left">
+        <div className=" " data-aos="fade-left">
           <h3 className="text-2xl font-semibold mb-6">Contact Info</h3>
           <p className="mb-6 text-[#9f9f9f]">
             Always available for freelance work if the right project comes
