@@ -1,62 +1,85 @@
 import React, { useEffect, useState } from "react";
 import { MdFormatQuote } from "react-icons/md";
-import { FaHtml5 } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import sidharth from "../assets/zid.png";
+import nasif from "../assets/nasif.png";
+import rashid from "../assets/rashid.png";
+import gopika from "../assets/gopika.jpg";
+import ajay from "../assets/ajay.png";
+import {
+  FaCode,
+  FaMobileAlt,
+  FaServer,
+  FaDatabase,
+  FaCloud,
+  FaCogs,
+} from "react-icons/fa";
 
 export default function Service() {
-  const service = [
+  const services = [
     {
-      icon: <FaHtml5 />,
-      title: "Design Trends",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    },
-    {
-      icon: <FaHtml5 />,
+      icon: <FaCode />,
       title: "Web Development",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      desc: "Building modern, high-performance web applications with clean, efficient code that meets the latest industry standards.",
     },
     {
-      icon: <FaHtml5 />,
-      title: "Fully Responsive",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      icon: <FaMobileAlt />,
+      title: "Mobile-Responsive Design",
+      desc: "Creating fully responsive and adaptive layouts that provide a seamless user experience across all devices, from mobile to desktop.",
     },
     {
-      icon: <FaHtml5 />,
-      title: "Branding",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      icon: <FaServer />,
+      title: "Backend Development",
+      desc: "Developing robust and scalable server-side logic, ensuring smooth data processing, and optimizing application performance.",
     },
     {
-      icon: <FaHtml5 />,
-      title: "Design Trends",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      icon: <FaDatabase />,
+      title: "Database Management",
+      desc: "Designing and managing databases for efficient data storage, retrieval, and security, using the latest database technologies.",
+    },
+    {
+      icon: <FaCloud />,
+      title: "Cloud Integration",
+      desc: "Integrating cloud services for scalable storage, computing, and deployment solutions, making your applications more flexible and reliable.",
+    },
+    {
+      icon: <FaCogs />,
+      title: "Software Maintenance",
+      desc: "Providing ongoing support and maintenance to keep your software up to date with the latest features and security updates.",
     },
   ];
 
   const testimonials = [
     {
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
-      name: "Maria Wilson",
-      role: "Envato Customer",
-      text: "Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight.",
+      image: sidharth,
+      name: "Sidharth",
+      role: "UI & UX Developer",
+      text: "Ramees is a highly skilled developer who goes above and beyond to ensure that the work is not only visually appealing but also functional. He quickly grasped our requirements and delivered exceptional results.",
     },
     {
-      image: "https://randomuser.me/api/portraits/women/2.jpg",
-      name: "Julia Sakura",
-      role: "Envato Customer",
-      text: "Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight.",
+      image: ajay,
+      name: "Ajay",
+      role: "Career Steersman Website Customer",
+      text: "Working with Ramees was a great experience. His dedication to delivering quality work was evident, and his insightful suggestions significantly improved the overall user experience.",
     },
     {
-      image: "https://randomuser.me/api/portraits/women/3.jpg",
-      name: "Anna Smith",
-      role: "Envato Customer",
-      text: "Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight.",
+      image: rashid,
+      name: "Rashid",
+      role: "Developing Partner",
+      text: "Ramees expertise and creative approach have been invaluable in our development projects. His commitment to achieving the best possible outcome truly sets him apart.",
     },
     {
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-      name: "Sophia Blake",
-      role: "Envato Customer",
-      text: "Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight.",
+      image: nasif,
+      name: "Nasif",
+      role: "Portfolio Customer",
+      text: "Ramees delivered exactly what was needed and more. His ability to understand the project requirements and translate them into a functional and elegant solution was truly impressive.",
+    },
+    {
+      image: gopika,
+      name: "Gopika",
+      role: "Portfolio Customer",
+      text: "Ramees is a professional who really cares about his work. He delivered the project on time and added his own creative touch that made the final result outstanding.",
     },
   ];
 
@@ -88,7 +111,7 @@ export default function Service() {
         <h1 className="text-4xl font-bold">My Services</h1>
       </div>
       <div className="grid grid-cols-6 lg:gap-x-5 xl:gap-x-10 gap-10 py-10">
-        {service?.map((item, ind) => (
+        {services?.map((item, ind) => (
           <div
             className="md:col-span-3 lg:col-span-2 col-span-6 bg-[#161616] text-white p-7 space-y-3 hover:border-b-2 hover:border-b-green-700 border-2 border-[#161616]"
             key={ind}
@@ -126,16 +149,16 @@ export default function Service() {
                     className="w-14 h-14 rounded-full"
                   />
                   <div>
-                    <h1 className="text-lg font-bold">
+                    <h1 className="text-xl font-bold">
                       {testimonials[firstTestimonialIndex].name}
                     </h1>
-                    <p className="text-sm text-[#9f9f9f]">
+                    <p className="text-base text-[#9f9f9f]">
                       {testimonials[firstTestimonialIndex].role}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-base text-[#9f9f9f]">
+                <p className="text-sm text-[#9f9f9f]">
                   {testimonials[firstTestimonialIndex].text}
                 </p>
 
@@ -157,16 +180,16 @@ export default function Service() {
                     className="w-14 h-14 rounded-full"
                   />
                   <div>
-                    <h1 className="text-lg font-bold">
+                    <h1 className="text-xl font-bold">
                       {testimonials[secondTestimonialIndex].name}
                     </h1>
-                    <p className="text-sm text-[#9f9f9f]">
+                    <p className="text-base text-[#9f9f9f]">
                       {testimonials[secondTestimonialIndex].role}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-base text-[#9f9f9f]">
+                <p className="text-sm text-[#9f9f9f]">
                   {testimonials[secondTestimonialIndex].text}
                 </p>
 
@@ -180,10 +203,7 @@ export default function Service() {
         </div>
 
         {/* Dot indicators */}
-        <div
-          className="flex justify-center space-x-2 mt-6"
-          data-aos="fade-down"
-        >
+        <div className="flex justify-center space-x-2 mt-6" data-aos="fade-up">
           {testimonials.map((_, index) => (
             <div
               key={index}

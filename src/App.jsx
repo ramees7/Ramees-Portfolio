@@ -120,22 +120,22 @@ function App() {
         </div>
       ) : (
         <BrowserRouter>
-          <section id="home">
+          <section id="home" className="z-0 sticky top-0">
             <Landing navLists={navLists} socialMedia={socialMedia} />
           </section>
-          <section id="about">
+          <section id="about" className="z-10 sticky">
             <About socialMedia={socialMedia} />
           </section>
-          <section id="resume">
+          <section id="resume" className="z-20 sticky">
             <Resume />
           </section>
-          <section id="skills">
+          <section id="skills"  className="z-30 sticky">
             <Skills />
           </section>
-          <section id="portfolio">
+          <section id="portfolio"  className="z-40 sticky">
             <Portfolio />
           </section>
-          <section id="contact">
+          <section id="contact" className="z-50 sticky">
             <Contact socialMedia={socialMedia} />
           </section>
         </BrowserRouter>

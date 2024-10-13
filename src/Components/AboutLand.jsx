@@ -10,7 +10,7 @@ export default function AboutLand({ socialMedia }) {
   }, []);
 
   return (
-    <section className="min-h-screen h-full bg-black text-white pb-10">
+    <section className="min-h-screen h-full bg-black text-white pb-10 ">
       <div>
         <div className="flex items-center flex-col pb-16" data-aos="fade-up">
           <h4 className="text-md md:text-lg mb-2 text-[#9f9f9f]">

@@ -49,7 +49,7 @@ export default function Portfolio() {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <div className="py-10 px-10 md:px-20 lg:px-40 bg-black text-white">
+    <div className="py-10 px-10 md:px-20 lg:px-40 bg-black text-white ">
       <div className="flex items-center flex-col pb-16 " data-aos="fade-up">
         <h4 className="text-md md:text-lg w-fit mb-2 text-[#9f9f9f]">
           Showcasing some of my best work
