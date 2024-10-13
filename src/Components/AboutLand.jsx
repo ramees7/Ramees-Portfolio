@@ -57,9 +57,13 @@ export default function AboutLand({ socialMedia }) {
               <div className="md:col-span-1 col-span-2">
                 <h1 className="text-base text-white">
                   Email:{" "}
-                  <span className="text-green-700">
-                    muhammedramees09876@gmail.com
-                  </span>
+                  <a
+                    href="mailto:muhammedrameespkl@gmail.com"
+                    target="_blank"
+                    className="text-green-700"
+                  >
+                    muhammedrameespkl@gmail.com
+                  </a>
                 </h1>
               </div>
               <div className="md:col-span-1 col-span-2">

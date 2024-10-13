@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
-import {message} from 'antd'
+import { message } from "antd";
 
 export default function Contact({ socialMedia }) {
   useEffect(() => {
@@ -29,7 +29,10 @@ export default function Contact({ socialMedia }) {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
-        await axios.post("https://ramees-portfolio-server.onrender.com/contact", values);
+        await axios.post(
+          "https://ramees-portfolio-server.onrender.com/contact",
+          values
+        );
         message.success("Message sent successfully");
         resetForm();
       } catch (error) {
@@ -142,22 +145,28 @@ export default function Contact({ socialMedia }) {
           </p>
           <div className="py-8 space-y-3">
             <h1 className="text-base text-white">
-              Name: <span className="text-[#9f9f9f]">Muhammed Ramees</span>
+              Name : <span className="text-[#9f9f9f]">Muhammed Ramees</span>
             </h1>
             <h1 className="text-base text-white">
-              Location:{" "}
+              Location :{" "}
               <span className="text-[#9f9f9f]">
                 AV House Velimukku, Malappuram, Kerala, India 676317
               </span>
             </h1>
             <h1 className="text-base text-white">
-              Call Me: <span className="text-[#9f9f9f]">+91 92074 24420</span>
+              Call Me :{" "}
+              <a href="tel:+919207424420" className="text-[#9f9f9f]"  target="_blank">
+                +91 92074 24420
+              </a>
             </h1>
             <h1 className="text-base text-white">
-              Email Me:{" "}
-              <span className="text-[#9f9f9f]">
-                muhammedramees09876@gmail.com
-              </span>
+              Email Me :{" "}
+              <a
+                href="mailto:muhammedrameespkl@gmail.com" target="_blank"
+                className="text-[#9f9f9f]"
+              >
+                muhammedrameespkl@gmail.com
+              </a>
             </h1>
           </div>
           <div className="flex gap-x-5 text-2xl">
