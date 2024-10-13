@@ -25,7 +25,6 @@ export default function Landing({ socialMedia, navLists }) {
   const [index, setIndex] = useState(0); // Role index
 
   useEffect(() => {
-    console.log({ isDeleting, displayText, index });
     const handleTextTransition = () => {
       if (isDeleting) {
         if (displayText.length > 0) {
@@ -68,7 +67,7 @@ export default function Landing({ socialMedia, navLists }) {
                 to={item.link}
                 smooth={true}
                 duration={1000}
-                key={ind}
+                key={`navlist-2-${ind}`}
                 onClick={toggleMenu}
                 className="cursor-pointer hover:text-[#9f9f9f]"
               >
@@ -92,12 +91,12 @@ export default function Landing({ socialMedia, navLists }) {
             {/* Mobile Menu Items */}
             <img src={mr7} alt="logo" className="w-[50px] mb-10" />
             {navLists?.map((item, ind) => (
-              <div>
+              <div key={`navlist-${ind}`}>
                 <ScrollLink
                   to={item.link}
                   smooth={true}
                   duration={500}
-                  key={ind}
+                  
                   onClick={toggleMenu}
                   className="cursor-pointer hover:text-[#9f9f9f]"
                 >
@@ -111,7 +110,7 @@ export default function Landing({ socialMedia, navLists }) {
               {contactData?.map((item, ind) => (
                 <a
                   href={item.link}
-                  key={ind}
+                  key={`contact-2-${ind}`}
                   title={item.name}
                   target="_blank"
                   className="mb-0"
@@ -131,7 +130,10 @@ export default function Landing({ socialMedia, navLists }) {
             </h1>
             {/* Animated Text */}
             <p className="text-2xl md:text-4xl transition-all duration-500 ease-in-out">
-              I'm a <span className="text-[#9f9f9f] font-semibold">{displayText}</span>
+              I'm a{" "}
+              <span className="text-[#9f9f9f] font-semibold">
+                {displayText}
+              </span>
             </p>
           </div>
 
@@ -140,7 +142,7 @@ export default function Landing({ socialMedia, navLists }) {
             {contactData?.map((item, ind) => (
               <a
                 href={item.link}
-                key={ind}
+                key={`contact-${ind}`}
                 title={item.name}
                 target="_blank"
                 className="mb-0"
@@ -155,7 +157,7 @@ export default function Landing({ socialMedia, navLists }) {
             {socialMedia?.map((item, ind) => (
               <a
                 href={item.link}
-                key={ind}
+                key={`social-${ind}`}
                 title={item.name}
                 target="_blank"
                 className="mb-0"

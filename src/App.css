@@ -29,3 +29,11 @@
 .loading-container img:nth-child(3) {
   animation-delay: 1s;
 }
+
+/* Add this to your CSS file */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #161616 inset !important; /* Change to your desired background color */
+  box-shadow: 0 0 0 1000px #161616 inset !important; /* Change to your desired background color */
+  -webkit-text-fill-color: #9f9f9f !important; /* Keep text color consistent */
+}

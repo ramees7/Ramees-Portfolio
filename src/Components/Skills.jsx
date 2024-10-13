@@ -14,7 +14,7 @@ export default function Skills() {
   const tools = [
     { name: "React JS", level: 85 },
     { name: "HTML", level: 99 },
-    { name: "CSS", level: 99 },
+    { name: "CSS", level: 90 },
     { name: "Bootstrap", level: 99 },
     { name: "Tailwind Css", level: 99 },
     { name: "JavaScript", level: 80 },
